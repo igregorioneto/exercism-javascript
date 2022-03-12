@@ -5,13 +5,11 @@ function translate2d(dx, dy) {
 }
 
 function memoizeTransform(f) {
-    return function(x, y) {
-      let result = f(x,y);
-      console.log("funcao "+result)
-      if(result[0] && result[0]) {
-          return f(x,y);
-       }      
-        return [ 1, 1 ];
+    return () => {
+      const func = f();
+      if(func) {
+        console.log(func)
+      }
     }
 }
 

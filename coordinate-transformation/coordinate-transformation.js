@@ -63,5 +63,18 @@ export function composeTransform(f, g) {
  *  if the arguments are the same on subsequent calls, or compute a new result if they are different.
  */
 export function memoizeTransform(f) {
-  throw new Error('Implement the memoizeTransform function');
+  let lastX = undefined;
+  let lastY = undefined;
+  let lastResult = undefined;
+
+  return (x, y) => {
+    if (x === lastX && y === lastY) {
+      return lastResult;
+    }
+
+    lastX = x;
+    lastY = y;
+    lastResult = f(x, y);
+    return lastResult;
+  };
 }
