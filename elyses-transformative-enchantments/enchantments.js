@@ -19,7 +19,17 @@ export function seeingDouble(deck) {
  * @returns {number[]} deck with triplicate 3s
  */
 export function threeOfEachThree(deck) {
-  throw new Error('Implement the threeOfEachThree function');
+  let a =[];
+  deck.map(n => {
+    if(n === 3) {
+        a.push(3)
+        a.push(3)
+        a.push(3)
+    } else {
+        a.push(n)
+    }
+  });
+  return a;
 }
 
 /**
@@ -31,7 +41,7 @@ export function threeOfEachThree(deck) {
  * @returns {number[]} deck with only two middle cards
  */
 export function middleTwo(deck) {
-  throw new Error('Implement the middleTwo function');
+  return deck.slice(4,6);
 }
 
 /**
@@ -43,7 +53,7 @@ export function middleTwo(deck) {
  */
 
 export function sandwichTrick(deck) {
-  throw new Error('Implement the sandwichTrick function');
+  
 }
 
 /**
